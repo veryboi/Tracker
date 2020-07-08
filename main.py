@@ -96,9 +96,16 @@ seconds = 0
 running = True
 n = 0
 pygame.font.init()
+
 small_font = pygame.font.SysFont("agencyfb", 20)
 big_font = pygame.font.SysFont("agencyfb", 40)
 biggester_font = pygame.font.SysFont("agencyfb", 64)
+
+if pygame.font.match_font("agencyfb") is None:
+    small_font = pygame.font.SysFont("Helvetica", 20)
+    big_font = pygame.font.SysFont("Helvetica", 40)
+    biggester_font = pygame.font.SysFont("Helvetica", 64)
+
 pygame.init()
 pygame.display.set_caption("Usage Tracker")
 # print(pygame.font.get_fonts())
@@ -275,3 +282,7 @@ while running:
 
 
     process_mod += 1
+
+
+
+
